@@ -42,11 +42,6 @@ namespace DataAccess.Concrete.InMemory
             return _cars;
         }
 
-        public List<Car> GetAllByBrand(int brandId)
-        {
-            return _cars.Where(c => c.BrandId == brandId).ToList();
-        }
-
         public void Update(Car car)
         {
             Car carToUpdate = null;

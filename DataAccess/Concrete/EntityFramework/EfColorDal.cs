@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace DataAccess.Concrete.EntityFramework
 {
-    public interface IEntity
+    public class EfColorDal
     {
     }
 }
