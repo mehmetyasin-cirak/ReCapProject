@@ -1,4 +1,6 @@
-﻿namespace Entities.Concrete
+﻿using Core.Entities;
+
+namespace Entities.Concrete
 {
     public class Car : IEntity
     {
