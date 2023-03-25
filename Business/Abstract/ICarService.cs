@@ -11,5 +11,7 @@ namespace Business.Abstract
     {
         List<Car> GetAll();
         List<Car> GetAllByBrandId(int brandId);
+        List<Car> GetByUnitPrice(decimal minPrice, decimal maxPrice);
+        public List<CarDetailDto> GetCarDetails();
     }
 }

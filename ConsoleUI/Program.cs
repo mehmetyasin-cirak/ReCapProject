@@ -4,7 +4,7 @@ using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 
 CarManager carManager = new CarManager(new EfCarDal());
-foreach (var car in carManager.GetAllByBrandId(1))
+foreach (var car in carManager.GetCarDetails())
 {
-    Console.WriteLine(car.Description);
+    Console.WriteLine(car.CarName + "/ " + car.BrandName + "/ " + car.ColorName + "/ " + car.UnitsPrice);
 }
