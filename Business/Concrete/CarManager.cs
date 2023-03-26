@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -18,12 +19,12 @@ namespace Business.Concrete
         {
             if (car.Description.Length < 2)
             {
-                return new ErrorResult("Ürün açıklaması en az 2 karakter olmalıdır.");
+                return new ErrorResult(Messages.ErrorMessageLenght);
             }
             else
             {
                 _iCarDal.Add(car);
-                return new SuccessResult("Ürün eklendi.");
+                return new SuccessResult(Messages.AddedCar);
             }
 
         }
@@ -31,18 +32,18 @@ namespace Business.Concrete
         public IResult Delete(Car car)
         {
             _iCarDal.Delete(car);
-            return new Result(true, "Ürün silindi.");
+            return new Result(true, Messages.DeletedCar);
         }
 
         public IDataResult<List<Car>> GetAll()
         {
             if (DateTime.Now.Hour == 22)
             {
-                return new ErrorDataResult<List<Car>>("Bakım saati");
+                return new ErrorDataResult<List<Car>>(Messages.MaintanenceTime);
             }
             else
             {
-                return new SuccessDataResult<List<Car>>(_iCarDal.GetAll(), "Listelendi.");
+                return new SuccessDataResult<List<Car>>(_iCarDal.GetAll(), Messages.ListedCars);
             }
 
 
@@ -50,12 +51,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAllByBrandId(int brandId)
         {
-            return new SuccessDataResult<List<Car>>(_iCarDal.GetAll(b => b.BrandId == brandId), "Markaya göre getirildi.");
+            return new SuccessDataResult<List<Car>>(_iCarDal.GetAll(b => b.BrandId == brandId), Messages.ListedBrand);
         }
 
         public IDataResult<Car> GetById(int carId)
         {
-            return new SuccessDataResult<Car>(_iCarDal.Get(c => c.Id == carId), "Markaya göre getirildi.");
+            return new SuccessDataResult<Car>(_iCarDal.Get(c => c.Id == carId), Messages.ListedCar);
         }
         public IDataResult<List<Car>> GetByUnitPrice(decimal minPrice, decimal maxPrice)
         {
@@ -64,13 +65,13 @@ namespace Business.Concrete
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_iCarDal.GetCarDetails(), "");
+            return new SuccessDataResult<List<CarDetailDto>>(_iCarDal.GetCarDetails(), Messages.CarDtoListed);
         }
 
         public IResult Update(Car car)
         {
             _iCarDal.Update(car);
-            return new Result(true, "Ürün güncellendi.");
+            return new Result(true, Messages.UpdatedCar);
         }
 
     }
