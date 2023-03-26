@@ -23,7 +23,7 @@ static void CarTest()
     //    console.writeline(car.carname + "/  " + car.brandname + "/  " + car.colorname + "/  " + car.unitsprice);
     //}
 
-    foreach (var car in carManager.GetAll())
+    foreach (var car in carManager.GetAll().Data)
     {
         Console.WriteLine(car.Description);
     }
