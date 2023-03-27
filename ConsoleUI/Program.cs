@@ -8,15 +8,18 @@ CarTest();
 
 static void CarTest()
 {
+    
+    
+
     CarManager carManager = new CarManager(new EfCarDal());
-    carManager.Add(new Car
-    {
-        BrandId = 1,
-        ColorId = 2,
-        ModelYear = 2020,
-        DailyPrice = 2000,
-        Description = "Mercedes A180"
-    });
+    //carManager.Add(new Car
+    //{
+    //    BrandId = 1,
+    //    ColorId = 2,
+    //    ModelYear = 2020,
+    //    DailyPrice = 2000,
+    //    Description = "Mercedes A180"
+    //});
 
     //foreach (var car in carmanager.getcardetails())
     //{
