@@ -8,9 +8,6 @@ CarTest();
 
 static void CarTest()
 {
-    
-    
-
     CarManager carManager = new CarManager(new EfCarDal());
     //carManager.Add(new Car
     //{
