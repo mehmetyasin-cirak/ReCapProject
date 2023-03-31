@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
             var result = _customerService.GetById(customerId);
             if (result.IsSuccess)
             {
-                return Ok();
+                return Ok(result.Data);
             }
             else
             {

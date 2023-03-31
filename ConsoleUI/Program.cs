@@ -4,7 +4,7 @@ using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 
-CarTest();
+//CarTest();
 
 static void CarTest()
 {

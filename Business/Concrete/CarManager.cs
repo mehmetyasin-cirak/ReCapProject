@@ -1,5 +1,4 @@
 ﻿using Business.Abstract;
-using Business.CCS;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -12,14 +11,12 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         ICarDal _iCarDal;
-        ILogger _iLogger;
 
-        public CarManager(ICarDal iCarDal, ILogger iLogger)
+        public CarManager(ICarDal iCarDal)
         {
             _iCarDal = iCarDal;
-            _iLogger = iLogger;
-        }
 
+        }
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
