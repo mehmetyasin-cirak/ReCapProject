@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
             var result = _userService.GetAll();
             if (result.IsSuccess)
             {
-                return Ok();
+                return Ok(result.Data);
             }
             else
             {

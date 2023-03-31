@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
             var result = _iCarService.GetAll();
             if (result.IsSuccess)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
             return BadRequest(result.Message);
         }
